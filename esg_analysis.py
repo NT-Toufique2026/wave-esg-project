@@ -39,7 +39,7 @@ st.markdown("""
 # ৪. ডাটা লোডিং ফাংশন
 def load_esg_data(sheet):
     try:
-        df = pd.read_excel("Modify WAVE_ESG_DATA_FINAL_WITH_INNOVATION_HUB_LINKED.xlsx", sheet_name=sheet)
+        df = pd.read_excel("data.xlsx", sheet_name=sheet)
         df.columns = df.columns.str.strip()
         df['Data Input'] = pd.to_numeric(df['Data Input'], errors='coerce')
         return df.dropna(subset=['Metric / KPI'])
